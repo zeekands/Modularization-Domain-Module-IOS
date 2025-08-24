@@ -10,13 +10,11 @@ workflows:
           include: true
 
     environment:
-      flutter: latest
+      # Hanya definisikan environment yang dibutuhkan untuk Swift/Xcode
       xcode: latest
-      cocoapods: default
-      ruby: default
       
     scripts:
-      - name: Build and Test
+      - name: Build and Test Swift Package
         script: |
           # Perintah untuk menjalankan test pada Swift Package
-          xcodebuild test -scheme SharedDomainTests -destination 'platform=iOS Simulator,name=iPhone 15'
+          xcodebuild test -scheme SharedDomain -destination 'platform=iOS Simulator,name=iPhone 15'
