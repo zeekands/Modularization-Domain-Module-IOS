@@ -1,0 +1,22 @@
+workflows:
+  swift-package-test:
+    name: Test Swift Package
+    triggering:
+      events:
+        - push
+        - pull_request
+      branch_patterns:
+        - pattern: main
+          include: true
+
+    environment:
+      flutter: latest
+      xcode: latest
+      cocoapods: default
+      ruby: default
+      
+    scripts:
+      - name: Build and Test
+        script: |
+          # Perintah untuk menjalankan test pada Swift Package
+          xcodebuild test -scheme SharedDomainTests -destination 'platform=iOS Simulator,name=iPhone 15'
