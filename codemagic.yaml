@@ -17,4 +17,4 @@ workflows:
       - name: Build and Test Swift Package
         script: |
           # Perintah untuk menjalankan test pada Swift Package
-          xcodebuild test -scheme SharedDomain -destination "platform=iOS Simulator,name=Any iOS Simulator Device"
+          xcodebuild test -scheme SharedDomain -destination "platform=iOS Simulator,name=iPhone 16 Pro"
